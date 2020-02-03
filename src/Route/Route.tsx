@@ -9,9 +9,11 @@
 import { createAppContainer } from 'react-navigation';
 
 import StackNav from '../Component/BaseComponent/StackNavigatorComponent'
-import WebsiteRoute from '../Page/Website/Route'
+import PoetryRoute from '../Page/Poetry/Route'
+import NewsRoute from '../Page/News/Route'
 const StackNavigation = StackNav({
-    ...WebsiteRoute
+    ...NewsRoute,
+    ...PoetryRoute,
 })
 
 export default createAppContainer(StackNavigation);

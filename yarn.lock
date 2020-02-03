@@ -986,8 +986,8 @@
 
 "@react-navigation/core@^3.5.1":
   version "3.5.1"
-  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
-  integrity sha512-q7NyhWVYOhVIWqL2GZKa6G78YarXaVTTtOlSDkvy4ZIggo40wZzamlnrJRvsaQX46gsgw45FAWb5SriHh8o7eA==
+  resolved "https://registry.npm.taobao.org/@react-navigation/core/download/@react-navigation/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
+  integrity sha1-eiM5/KNJaXkwX7Ooq4jCyo2MIU0=
   dependencies:
     hoist-non-react-statics "^3.3.0"
     path-to-regexp "^1.7.0"
@@ -996,8 +996,8 @@
 
 "@react-navigation/native@^3.6.2":
   version "3.6.2"
-  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-3.6.2.tgz#3634697b6350cc5189657ae4551f2d52b57fbbf0"
-  integrity sha512-Cybeou6N82ZeRmgnGlu+wzlV3z5BZQR2dmYaNFV1TNLUGHqtvv8E7oNw9uYcz9Ox5LFbiX+FdNTn2d6ZPlK0kg==
+  resolved "https://registry.npm.taobao.org/@react-navigation/native/download/@react-navigation/native-3.6.2.tgz#3634697b6350cc5189657ae4551f2d52b57fbbf0"
+  integrity sha1-NjRpe2NQzFGJZXrkVR8tUrV/u/A=
   dependencies:
     hoist-non-react-statics "^3.0.1"
     react-native-safe-area-view "^0.14.1"
@@ -2099,7 +2099,7 @@ cosmiconfig@^5.0.5, cosmiconfig@^5.1.0:
 
 create-react-class@15.6.0:
   version "15.6.0"
-  resolved "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
+  resolved "https://registry.npm.taobao.org/create-react-class/download/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
   integrity sha1-q0SEl8JlZuHilBPogyB9V8/nvtQ=
   dependencies:
     fbjs "^0.8.9"
@@ -2403,6 +2403,11 @@ escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
+
+escape-string-regexp@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/escape-string-regexp/download/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha1-owME6Z2qMuI7L9IPUbq9B8/8o0Q=
 
 escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
@@ -3279,7 +3284,7 @@ image-size@^0.6.0:
 
 immutable@~3.7.6:
   version "3.7.6"
-  resolved "https://registry.npmjs.org/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
+  resolved "https://registry.npm.taobao.org/immutable/download/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
   integrity sha1-E7TTyxK++hVIKib+Gy665kAHHks=
 
 import-fresh@^2.0.0:
@@ -3383,7 +3388,7 @@ inquirer@^7.0.0:
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
-invariant@^2.2.2, invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -5502,8 +5507,8 @@ react-native-largelist-v3@^3.0.15:
 
 react-native-legacy-components@^0.1.3:
   version "0.1.3"
-  resolved "https://registry.npmjs.org/react-native-legacy-components/-/react-native-legacy-components-0.1.3.tgz#880dd38f5b45497443b6ce330b971120d3318f6e"
-  integrity sha512-qiYtJl1xhLeWcHnh19L1MTUCKEOR7RPztuz/20XmI9/1Z4j1DeWHhUo4qZFzYpBPqBa6opFgV+u2Dp61bbRXtg==
+  resolved "https://registry.npm.taobao.org/react-native-legacy-components/download/react-native-legacy-components-0.1.3.tgz#880dd38f5b45497443b6ce330b971120d3318f6e"
+  integrity sha1-iA3Tj1tFSXRDts4zC5cRINMxj24=
   dependencies:
     create-react-class "15.6.0"
     fbjs "~0.8.9"
@@ -5583,6 +5588,14 @@ react-native-typescript-transformer@^1.2.13:
     semver "^5.4.1"
     source-map "^0.5.6"
 
+react-native-webview@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.npm.taobao.org/react-native-webview/download/react-native-webview-8.0.4.tgz#4951df32bd54f6fa16bc0eda5e6e6762d8b83ba8"
+  integrity sha1-SVHfMr1U9voWvA7aXm5nYti4O6g=
+  dependencies:
+    escape-string-regexp "2.0.0"
+    invariant "2.2.4"
+
 react-native@0.61.5:
   version "0.61.5"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"
@@ -5617,6 +5630,11 @@ react-native@0.61.5:
     scheduler "0.15.0"
     stacktrace-parser "^0.1.3"
     whatwg-fetch "^3.0.0"
+
+react-navigation-hooks@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/react-navigation-hooks/download/react-navigation-hooks-1.1.0.tgz#337c41a50ebc7b9030bb9d9333cd4fd6e1f86b68"
+  integrity sha1-M3xBpQ68e5Awu52TM81P1uH4a2g=
 
 react-navigation-stack@^1.10.3:
   version "1.10.3"
@@ -5728,7 +5746,7 @@ realpath-native@^1.1.0:
 
 rebound@^0.0.13:
   version "0.0.13"
-  resolved "https://registry.npmjs.org/rebound/-/rebound-0.0.13.tgz#4a225254caf7da756797b19c5817bf7a7941fac1"
+  resolved "https://registry.npm.taobao.org/rebound/download/rebound-0.0.13.tgz#4a225254caf7da756797b19c5817bf7a7941fac1"
   integrity sha1-SiJSVMr32nVnl7GcWBe/enlB+sE=
 
 recursive-fs@^1.1.2:
@@ -6532,8 +6550,8 @@ table@^5.2.3:
 
 teaset@^0.7.1:
   version "0.7.1"
-  resolved "https://registry.npmjs.org/teaset/-/teaset-0.7.1.tgz#652a4e146662eccd7784da45dd6e6cf289d8b9f7"
-  integrity sha512-DgR/Ah29A4sgAw2/lWUJSWneyHCxB04vmHqChCnGMfqe0RurexRl/EcKv4q8aOSDFspQsETdP/FWKvOfmvDI7A==
+  resolved "https://registry.npm.taobao.org/teaset/download/teaset-0.7.1.tgz#652a4e146662eccd7784da45dd6e6cf289d8b9f7"
+  integrity sha1-ZSpOFGZi7M13hNpF3W5s8onYufc=
   dependencies:
     prop-types "^15.7.2"
     react-native-legacy-components "^0.1.3"

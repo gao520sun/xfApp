@@ -8,14 +8,14 @@
  */
 import React, { Component } from 'react'
 import {Platform} from 'react-native'
-import AppNavigarion from '../../../Route/Route'
+import AppNavigation from '../../../Route/Route'
 
 const prefix = Platform.OS == 'android' ? 'safety://safety/' : 'safety://'
 
 export default class MainPageContainer extends Component {
     render() {
         return (
-            <AppNavigarion uriPrefix={prefix}/>
+            <AppNavigation uriPrefix={prefix}/>
         )
     }
 }

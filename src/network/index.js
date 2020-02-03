@@ -4,8 +4,6 @@
  */
 import axios from 'axios';
 
-import signature from './signature';
-
 let _sign_key = '';
 let _sign_secret = '';
 let _errorHandle = () =>{};
@@ -37,13 +35,13 @@ const returnResponse = (response = {}) => {
     const api = config.url || '';
     const requestTime = config.requestTime || Date.now();
     const responseTime = Date.now() - requestTime;
-    log('response', {
-        api: api,
-        status: response.status,
-        statusText: response.statusText,
-        responseData: responseData,
-        responseTime: responseTime
-    });
+    // log('response', {
+    //     api: api,
+    //     status: response.status,
+    //     statusText: response.statusText,
+    //     responseData: responseData,
+    //     responseTime: responseTime
+    // });
     const {status, msg, message, data} = responseData;
     const _status = response.status !== 200 ? response.status : status;
     let _msg = msg || message || 'ok';
@@ -58,29 +56,17 @@ axios.defaults.headers.common.Accept = 'application/json';
 
 // 请求拦截器
 axios.interceptors.request.use((config) => {
-    console.log('测测试一下config.headers.access_token:::',config.headers.access_token)
-    const withoutCheckSign = config.withoutCheckSign || false; // 不需要阿里验签
-    if (!withoutCheckSign && config.headers.access_token) {
-        console.log('测测试一下1111config.headers.access_token:::',config.headers.access_token)
-        config.headers.common.Authorization = config.headers.access_token;
-    }
-    if (!withoutCheckSign) {
-        if (config.method.toLocaleUpperCase() !== 'GET') {
-            config.headers['Content-Type'] = 'application/json; charset=UTF-8';
-        } else {
-            // POST 请求使用此content type 验签失败
-            config.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-        }
-    }
-    const _requestConfig = config.hasOwnProperty('__retryCount') || withoutCheckSign ? config : signature(config, _sign_key, _sign_secret);
-    log('request', {
-        api: _requestConfig.url,
-        method: _requestConfig.method,
-        params: _requestConfig.params,
-        data: _requestConfig.data && typeof _requestConfig.data === 'string' ? JSON.parse(_requestConfig.data) : '',
-        stringToSign: _requestConfig.stringToSign,
-        requestConfig:_requestConfig
-    });
+
+    config.headers['Content-Type'] = 'application/json; charset=UTF-8';
+    const _requestConfig = config ;
+    // log('request', {
+    //     api: _requestConfig.url,
+    //     method: _requestConfig.method,
+    //     params: _requestConfig.params,
+    //     data: _requestConfig.data && typeof _requestConfig.data === 'string' ? JSON.parse(_requestConfig.data) : '',
+    //     stringToSign: _requestConfig.stringToSign,
+    //     requestConfig:_requestConfig
+    // });
     return _requestConfig;
 }, (error) => Promise.reject(error));
 // 响应拦截器
@@ -159,6 +145,10 @@ export function request({host, uri, params = {}, data = {}, headers = {}, method
     if (url.indexOf('http') !== 0) {
         throw new Error(`非法请求: ${url}`);
     }
+    let postData = null
+    if(method === 'POST' || method === 'PUT') {
+        postData = JSON.stringify(data)
+    }
     // GET方法参数处理
     for (const key in params) {
         if (params.hasOwnProperty(key)) {
@@ -184,7 +174,7 @@ export function request({host, uri, params = {}, data = {}, headers = {}, method
         headers:{...defaultHeaders, ...headers},
         method: method,
         params:params,
-        data: JSON.stringify(data),
+        data: postData,
         requestTime: Date.now(),
     };
     return axios.request(config);
