@@ -3,14 +3,9 @@ import { Text, View, StyleSheet, TouchableOpacity, FlatList } from 'react-native
 
 import { NavigationContext } from 'react-navigation';
 
-import NSWebViewPageContainer from '../NSWebViewPageContainer'
+import FlatListPageComponent from '../../BasePageComponent/FlatListPageComponent'
 
 import {getNewsList} from '../APi/NSApi'
-// import ScrollableTabView from 'react-native-scrollable-tab-view'
-
-// import CustomTabComponent from '../Components/CustomTabComponent'
-
-// import NSNewsListPageContainer from '../NSNewsListPageContainer'
 
 interface NSNewsMainPageContainerProps {}
 
@@ -20,13 +15,15 @@ const NSNewsMainPageContainer = (props: NSNewsMainPageContainerProps) => {
   const [list, setList] = React.useState([]);
 
   React.useEffect(() => {
-    getDataApi()
+
   }, [])
 
-  const getDataApi = async () => {
+  const fetchData = async ({successCallback,errorCallback}) => {
     const res = await getNewsList();
     if(res.status === 1) {
-      setList(res.data)
+      successCallback(res.data)
+    }else {
+      errorCallback()
     }
   }
 
@@ -42,41 +39,19 @@ const NSNewsMainPageContainer = (props: NSNewsMainPageContainerProps) => {
         )
     }
   
-    const _keyExtractor = (item, index) => index + item;
   return (
     <View style={styles.container}>
-      <FlatList 
-          style = {styles.flatContainer}
-          data = {list}
-          keyExtractor={_keyExtractor}
-          renderItem = {_renderItem}
+      <FlatListPageComponent 
+          fetchData = {(param) =>fetchData(param)}
+          renderCell = {_renderItem}
     />
     </View>
   );
-
-  //   const tabs = ['头条,头条头条头条', '社会社会社会', '国内国内国内', '国际国际国际', '娱乐', '体育', '军事', '财经', '科技', '时尚']
-  //   const _renderTabBar = () => {
-  //       return (
-  //           <CustomTabComponent tabs = {tabs}/>
-  //       )
-  //   }
-
-  //   const scorllableTabviev = () => {
-  //       return (
-  //           <ScrollableTabView renderTabBar = {() => _renderTabBar()}>
-  //               {tabs.map((item, index) => {
-  //                   return <NSNewsListPageContainer tabLabel = {item}  key = {index} style = {{width:100,height:100,backgroundColor:'red'}} />
-  //               })}
-  //           </ScrollableTabView>
-  //       )
-  //   }
-  // return (
-  //   <View style={styles.container}>
-  //     {scorllableTabviev()}
-  //   </View>
-  // );
 };
 
+NSNewsMainPageContainer.navigationOptions = ({navigation}) => ({
+  title:'新闻工作室',
+})
 export default NSNewsMainPageContainer;
 
 const styles = StyleSheet.create({

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image,  TouchableOpacity} from 'react-native';
 
-import icon40 from '../../BaseResource/Icon/icon40.png'
+const icon40 = require('../../BaseResource/Icon/icon40.png')
 
 interface NotDataPageComponentProps {
   errorMsg:string

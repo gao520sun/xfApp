@@ -23,4 +23,5 @@ export const TabOptions = (navigation, tabBarTitle, normalImage, selectedImage) 
     }
 }
 
+
 export default TabNavigator;
